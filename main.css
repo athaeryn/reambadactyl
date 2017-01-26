@@ -1,0 +1,26 @@
+body {
+  font-family: monospace;
+}
+
+.user-list {
+  display: flex;
+}
+
+.user {
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* photo */
+.user:before {
+  height: 100px;
+  width: 100px;
+  background: cadetblue;
+  content: '';
+  display: inline-block;
+  margin-bottom: 8px;
+}
+

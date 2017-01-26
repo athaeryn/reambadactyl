@@ -1,0 +1,9 @@
+#!/bin/sh
+
+touch ./tmplibs.js
+
+curl https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js >> ./tmplibs.js
+curl https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js >> ./tmplibs.js
+curl https://cdnjs.cloudflare.com/ajax/libs/ramda/0.23.0/ramda.min.js >> ./tmplibs.js
+
+mv ./tmplibs.js ./libs.js
