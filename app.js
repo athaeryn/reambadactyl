@@ -10,7 +10,7 @@ const _ = null
 const $div = $('div')
 const $b = $('b')
 
-const user = R.compose(
+const User = R.compose(
   (name) =>
     $div(
       { className: 'user' },
@@ -19,13 +19,13 @@ const user = R.compose(
   R.prop('name')
 )
 
-const userList = R.compose(
+const UserList = R.compose(
   $div({ className: 'user-list' }),
-  R.map(user),
+  R.map(User),
   R.prop('users')
 )
 
-const header = R.converge(
+const Header = R.converge(
   (count, admins) =>
     $div(_, `${count} users. ${admins} admin(s).`),
   [
@@ -41,18 +41,18 @@ const header = R.converge(
   ]
 )
 
-const footer = R.always($div(_, 'hey this is the footer'))
+const Footer = R.always($div(_, 'hey this is the footer'))
 
-const divider = R.always($('hr', _, _))
+const Divider = R.always($('hr', _, _))
 
 const App = R.converge(
   $('div', null),
   R.intersperse(
-    divider,
+    Divider,
     [
-      header,
-      userList,
-      footer
+      Header,
+      UserList,
+      Footer
     ]
   )
 )
